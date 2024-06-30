@@ -1,0 +1,17 @@
+commands
+kubectl apply -f pod.yaml
+kubectl create namespace example-namespace
+kubectl run example-pod --image=nginx:latest --port=80 --namespace=example-namespace
+kubectl expose pod example-pod --type=ClusterIP --port=80 --target-port=80 --namespace=example-namespace
+kubectl get deployments -n example-namespace
+kubectl describe deployment example-deployment -n example-namespace
+kubectl rollout status deployment/example-deployment -n example-namespace
+kubectl create namespace example-namespace
+kubectl apply -f pod-with-command.yaml
+kubectl describe pod example-pod -n example-namespace
+kubectl get nodes
+kubectl get nodes -o wide------ check ip
+kubectl create secret generic my-secret --from-literal=username=my-app --from-literal=password=s3cr3t
+kubectl get secrets
+
+
